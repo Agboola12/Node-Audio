@@ -12,13 +12,15 @@ cloudinary.config({
 
 const storage = new CloudinaryStorage({
   cloudinary,
-  params:{
-    folder: "Church",
-    allowedFormat: ["png", "jpeg", "jpg", "svg", "gif"]
-}
+  params:async(req, file)=>{
+return{
+  folder: 'Music',
+   resource_type: "auto",
+     allowedFormat: [ "mp3"],
+    //  path: file.path
+   }
+}   
 });
 const upload = multer({storage});
 
 module.exports ={upload, cloudinary}
-
-

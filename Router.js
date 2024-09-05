@@ -4,5 +4,6 @@ const { upload } = require('./UploadAudio');
 
 const rout = express.Router();
 
-rout.patch("/upload",upload.single("encodedAudio") , AudioEncode )
+rout.post("/upload", upload.single("encodedAudio") , AudioEncode )
 
+module.exports = {rout}
