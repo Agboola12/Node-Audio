@@ -14,7 +14,7 @@ app.post('/upload', upload.single('encodedAudio'), async (req, res) => {
   const encodedAudio = fs.readFileSync(filePath);
 
   // Send the encoded audio to the FastAPI backend
-  const response = await fetch('http://localhost:8000/decode', {
+  const response = await fetch('http://localhost:5173/decode', {
     method: 'POST',
     body: encodedAudio,
     headers: { 'Content-Type': 'application/octet-stream' }
