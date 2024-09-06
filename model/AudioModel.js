@@ -6,6 +6,6 @@ const AudioSchema = mongoose.Schema({
 }, {timestamps:true})
 
 
-const Audio = mongoose.model("adminChurch", AudioSchema);
+const Audio = mongoose.model("Audio", AudioSchema);
 
 module.exports = Audio

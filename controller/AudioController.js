@@ -2,10 +2,12 @@ const Audio = require("../model/AudioModel");
 
 
 const AudioEncode = async (req, res) => {  
-    const { encodedAudio } = req.body;
-
+    const { encodedAudio } = req.file.path;
+    
+        console.log(req.file);
     try {
         const newAdmin = await Audio.create({ encodedAudio });
+      
         return res.status(201).json({
             status: true,
             message: "New Audio has been added",
